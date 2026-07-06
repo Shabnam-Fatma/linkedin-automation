@@ -8,11 +8,13 @@ const { chromium } = require("playwright");
 
   const page = await browser.newPage();
 
-  await page.goto("https://example.com");
+  await page.goto("https://www.linkedin.com/login");
 
-  console.log(await page.title());
+  console.log("Title:", await page.title());
 
-  await page.waitForTimeout(5000);
+  console.log("Username inputs:", await page.locator("#username").count());
+
+  await page.waitForTimeout(10000);
 
   await browser.close();
 })();
